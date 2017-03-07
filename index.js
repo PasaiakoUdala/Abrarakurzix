@@ -27,7 +27,7 @@ io.sockets.on('connection', function (socket) {
 
 });
 
-var config = require("config/config.js");
+var config = require("./config/config.js");
 var _dbhostname_ = config.MYSQL.server;
 var _dbusername_ = config.MYSQL.user;
 var _dbpassword_ = config.MYSQL.passwd;
