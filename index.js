@@ -40,7 +40,7 @@ var dsn = {
 };
 var mysqlEventWatcher = MySQLEvents(dsn);
 var watcher =mysqlEventWatcher.add(
-    'ivozng.ast_adr',
+    'ivozng.ast_cdr',
     function (oldRow, newRow, event) {
 
         //row inserted
@@ -59,9 +59,13 @@ var watcher =mysqlEventWatcher.add(
         //row updated
         if (oldRow !== null && newRow !== null) {
             //update code goes here
+            console.log("**********************************************************");
+            console.log(oldRow);
+            console.log(newRow);
+            console.log("**********************************************************");
         }
 
         //detailed event information
         console.log(event)
-    }'
+    }
 );
