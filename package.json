@@ -1,0 +1,11 @@
+{
+    "name": "Abraracourcix",
+    "version": "1.0.0",
+    "description": "Asuranzeturix-entzako API zerbitzaria",
+    "dependencies": {
+        "socket.io": "latest",
+        "express": "latest",
+        "jade": "latest"
+    },
+    "author": "Iker Ibarguren Berasaluze"
+}
