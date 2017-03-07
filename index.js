@@ -32,10 +32,6 @@ var _dbhostname_ = config.MYSQL.server;
 var _dbusername_ = config.MYSQL.user;
 var _dbpassword_ = config.MYSQL.passwd;
 
-console.log(_dbhostname_);
-console.log(_dbusername_);
-console.log(_dbpassword_);
-
 var MySQLEvents = require('mysql-events');
 var dsn = {
     host:     _dbhostname_,
@@ -66,7 +62,6 @@ var watcher =mysqlEventWatcher.add(
         }
 
         //detailed event information
-        //console.log(event)
-    },
-    'match this string or regex'
+        console.log(event)
+    }'
 );
