@@ -26,3 +26,44 @@ io.sockets.on('connection', function (socket) {
     socket.emit('message', { message: 'Kaixo ' + socket.name });
 
 });
+
+var config = require("config");
+var _dbhostname_ = config.MYSQL.user;
+var _dbusername_ = config.MYSQL.user;
+var _dbpassword_ = config.MYSQL.passwd;
+
+
+var MySQLEvents = require('mysql-events');
+var dsn = {
+    host:     _dbhostname_,
+    user:     _dbusername_,
+    password: _dbpassword_,
+};
+var mysqlEventWatcher = MySQLEvents(dsn);
+var watcher =mysqlEventWatcher.add(
+    'ivozng.ast_adr',
+    function (oldRow, newRow, event) {
+
+        //row inserted
+        if (oldRow === null) {
+            //insert code goes here
+            console.log("**********************************************************");
+            console.log(newRow);
+            console.log("**********************************************************");
+        }
+
+        //row deleted
+        if (newRow === null) {
+            //delete code goes here
+        }
+
+        //row updated
+        if (oldRow !== null && newRow !== null) {
+            //update code goes here
+        }
+
+        //detailed event information
+        //console.log(event)
+    },
+    'match this string or regex'
+);
