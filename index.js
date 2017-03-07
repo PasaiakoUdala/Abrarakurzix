@@ -5,18 +5,16 @@
 var express = require("express");
 var app = express();
 var port = 3700;
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 
-app.get("/", function(req, res){
-    res.send("It works!");
-});
-
-var io = require('socket.io').listen(app.listen(port));
+server.listen(port);
 console.log("Listening on port " + port);
 
 var bezeroak = [];
 
-io.sockets.on('connection', function (socket) {
-
+io.on('connection', function (socket) {
+    console.log("Bezero berria");
     // Izena eman bezeroari
     socker.name = socket.remoteAddress + ":" + socket.remotePort;
 
@@ -43,17 +41,14 @@ var watcher =mysqlEventWatcher.add(
     'ivozng.ast_cdr',
     function (oldRow, newRow, event) {
 
-        //row inserted
+        //row insert
         if (oldRow === null) {
-            //insert code goes here
-            console.log("**********************************************************");
             console.log(newRow);
-            console.log("**********************************************************");
         }
 
         //row deleted
         if (newRow === null) {
-            //delete code goes here
+
         }
 
         //row updated
