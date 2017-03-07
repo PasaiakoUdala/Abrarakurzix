@@ -1,0 +1,7 @@
+module.exports = {
+    MYSQL:{
+        server: 'MYSQL IP',
+        user: 'MYSQL user',
+        passwd: 'MYSQL passwd'
+    }
+}

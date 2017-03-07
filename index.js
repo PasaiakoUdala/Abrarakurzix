@@ -27,11 +27,14 @@ io.sockets.on('connection', function (socket) {
 
 });
 
-var config = require("config");
+var config = require("config/config.js");
 var _dbhostname_ = config.MYSQL.user;
 var _dbusername_ = config.MYSQL.user;
 var _dbpassword_ = config.MYSQL.passwd;
 
+console.log(_dbhostname_);
+console.log(_dbusername_);
+console.log(_dbpassword_);
 
 var MySQLEvents = require('mysql-events');
 var dsn = {
