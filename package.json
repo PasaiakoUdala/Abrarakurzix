@@ -1,11 +1,12 @@
 {
-    "name": "Abrarakurzix",
-    "version": "1.0.0",
-    "description": "Asuranzeturix-entzako API zerbitzaria",
-    "dependencies": {
-        "socket.io": "latest",
-        "express": "latest",
-        "jade": "latest"
-    },
-    "author": "Iker Ibarguren Berasaluze"
+  "name": "Abrarakurzix",
+  "version": "1.0.0",
+  "description": "Asuranzeturix-entzako API zerbitzaria",
+  "dependencies": {
+    "express": "4.15.2",
+    "jade": "1.11.0",
+    "mysql-events": "0.0.10",
+    "socket.io": "1.7.3"
+  },
+  "author": "Iker Ibarguren Berasaluze"
 }
